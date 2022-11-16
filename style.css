@@ -1,0 +1,681 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+ 
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Ubuntu', sans-serif; */
+.navbar{
+    width: 100%;
+    font-family: ntu'Ubu', sans-serif;
+    padding: 30px 0;
+    position: fixed; 
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+.sticky{
+    background-color: crimson;
+    padding: 20px 0;
+}
+.max-width{
+    max-width: 1200px;
+    padding: 0 80px;
+    margin: auto;
+}
+.navbar .logo a{
+    font-size: 35px;
+    font-weight: 600;
+    color: #fff;
+}
+.navbar .logo a span{
+    color: crimson
+}
+.sticky .logo a span{
+    color: white;
+}
+.navbar .menu li{
+    list-style-type: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition:  .4s;
+}
+.navbar .menu li a:hover{
+    color: yellow;
+    cursor: pointer;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* menu btn styling */
+.menu-btn{
+    color: #fff;
+    
+    cursor: pointer;
+    display: none;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.menu-btn i{
+    font-size: 27px;
+}
+.scrol-up-button{
+    position: fixed;
+    height: 35px;
+    width: 32px;
+    right: 20px;
+    bottom: 10px;
+    background: crimson;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    border-radius: 6px;
+    z-index: 9999;
+    line-height: 40px;
+    opacity: 0;
+    cursor: pointer;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scrol-up-button.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* home section styling */
+.home{
+    display: flex;
+    background: url(images/images/banner.jpg) no-repeat;
+    /*background-position: center;*/
+    /*background-size: cover;*/
+    background-attachment: fixed;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+.home .max-width{
+    margin: auto 0 auto 40px;
+}
+.max-width .home-content a{
+    background: crimson;
+    color: #fff;
+    padding: 12px 32px;
+    border: 2px solid crimson;
+    border-radius: 6px;
+    margin-top: 20px;
+    display: inline-block;
+    font-size: 25px;
+    transition: 0.3s;
+}
+.max-width .home-content a:hover{
+    color: crimson;
+    background: none;
+}
+.home .home-content .text-1{
+    font-size: 27px;
+}
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-3 span{
+    color: crimson;
+    font-weight: 500;
+}
+
+/* about section styling */
+section{
+    padding: 100px 0;
+}
+.about, .services, .skills, .teams, .contact, footer{
+    font-family: 'Poppins', sans-serif; 
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+}
+section .title::before{
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+section .title::after{
+    content: "";
+    position: absolute;
+    padding: 5px;
+    color: crimson;
+    font-size: 20px;
+    background: #fff;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.about .title::after{
+    content: "who i am";
+}
+.about-content, .serv-content, .skills-content, .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.about-content .left{
+    width: 45%;
+}
+.about-content .left img{
+  width: 400px;
+  height: 400px;
+  object-fit:cover;
+  border-radius: 6px;
+}
+.about-content .right{
+    width: 55%;
+}
+.about-content .right .text{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.about-content .right .text span{
+    color: crimson;
+}
+.about-content .right p{
+    text-align: justify;
+}
+.about-content .right a{
+    background: crimson;
+    color: #fff;
+    padding: 6px 20px;
+    border: 2px solid crimson;
+    border-radius: 6px;
+    margin-top: 25px;
+    display: inline-block;
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+.about-content .right a:hover{
+    color: crimson;
+    background: none;
+}
+
+/* services section styling */
+.services, .teams{
+  background: #111;
+  color: #fff;
+}
+.services .title::before, .teams .title::before{
+    background: #fff;
+}
+.services .title::after, .teams .title::after{
+    content: "what i provid";
+    background: #111;
+}
+.serv-content .card{
+    width: calc(33% - 20px);
+    height: auto;
+    background: #222;
+    padding: 20px 25px;
+    cursor: pointer;
+    border-radius: 6px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.serv-content .card:hover{
+    background: crimson;
+}
+.serv-content .card .box{
+    transition: all 0.3s ease;
+}
+.serv-content .card .box:hover{
+    transform: scale(1.05);
+}
+
+.serv-content .card i{
+    font-size: 50px;
+    color: crimson;
+    transition: all 0.3s ease;
+}
+.serv-content .card:hover i{
+    color: #fff;
+}
+.serv-content .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+/* skills section styling */
+.skills .title::after{
+    content: "what i know";
+}
+.skills-content .column{
+    width: calc(50% - 30px);
+}
+.skills-content .left .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.skills-content .left p{
+    text-align: justify;
+}
+.skills-content .left a{
+    background: crimson;
+    color: #fff;
+    padding: 8px 16px;
+    border: 2px solid crimson;
+    border-radius: 6px;
+    margin-top: 20px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+.skills-content .left a:hover{
+    color: crimson;
+    background: none;
+}
+.skills-content .right .bars{
+    margin-bottom: 15px;
+}
+.skills-content .right .info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 13px;
+}
+.skills-content .right .info span{
+   font-weight: 500;
+   font-size: 18px;
+}
+.skills-content .right .line{
+    height: 5px;
+    width: 100%;
+    background: lightgrey;
+    position: relative;
+}
+.skills-content .right .line::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: crimson;
+}
+.skills-content .right .html::before{
+    width: 90%;
+}
+.skills-content .right .css::before{
+    width: 70%;
+}
+.skills-content .right .js::before{
+    width: 80%;
+}
+.skills-content .right .php::before{
+    width: 50%;
+}
+.skills-content .right .mysql::before{
+    width: 60%;
+}
+
+/* teams section styling */
+.teams{
+    background: #111;
+    color: #fff;
+  }
+  .teams .title::before{
+      background: #fff;
+  }
+.teams .title::after{
+    content: "who with me";
+}
+.teams .carousel .card{
+    background: #222;
+    padding: 25px 35px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    text-align: center;
+    transition: 0.3s ease;
+}
+.teams .carousel .card:hover{
+    background: crimson;
+    border: 2px solid #fff;
+}
+.teams .carousel .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+.teams .carousel .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    transition: 0.3s ease;
+}
+.teams .carousel .card:hover .box{
+    transform: scale(1.05);
+}
+.teams .carousel .card img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid crimson;
+}
+ .teams .carousel .card:hover img{
+    border-color:  #fff;
+ }
+ .owl-dots{
+    text-align: center;
+    margin-top: 20px;
+ }
+ .owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none !important;
+    border: 2px solid crimson !important;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+ }
+ .owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+ }
+ .owl-dot.active,
+ .owl-dot:hover{
+    background: crimson !important;
+ }
+
+ /* cantact section styling */
+ .contact .title::after{
+    content: "get in touch";
+ }
+ .contact .contact-content .column{
+    width: calc(50% - 30px);
+ }
+ .contact .contact-content .left .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+ }
+ .contact .contact-content .left p{
+    text-align: justify;
+ }
+ .contact .contact-content .left .icon{
+    margin: 10px 0;
+ }
+ .contact-content .left .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+ }
+ .contact-content .left .row i{
+    font-size: 25px;
+    color: crimson;
+ }
+ .contact-content .left .info{
+    margin-left:30px;
+ }
+ .contact-content .left .envelope{
+    margin-left: 25px;
+ }
+ .contact .contact-content .left .info .head{
+    font-weight: 500;
+ }
+ .contact-content .left .info .sub-title{
+    color: #333;
+ }
+ 
+ .contact-content .right form .fields{
+    display: flex;
+ }
+  .contact-content .right form .field,
+  .contact-content .right form .fields .field{
+    width: 100%;
+    height: 45px;
+    margin-bottom: 15px;
+}
+.contact-content .right form .textarea{
+   height: 80px;
+   width: 100%;
+}
+ .contact-content .right form .field input,
+ .contact-content .right form .textarea textarea{
+    width: 100%;
+    height: 100%;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    padding: 0 15px;
+    outline: none;
+ }
+ .contact-content .right form .fields .name{
+    margin-right: 10px;
+ }
+ .contact-content .right form .fields .email{
+    margin-left: 10px;
+ }
+ .contact-content .right form .textarea textarea{
+    padding-top: 10px;
+    resize: none;
+ }
+ .contact-content .right form .button{
+    height: 47px;
+    width: 170px;
+    
+ }
+ .contact-content .right form .button button{
+   height: 100%;
+   width: 100%;
+   background: crimson;
+   color: #fff;
+   font-size: 20px;
+   font-weight: 500;
+   border-radius: 6px;
+   border: 2px solid crimson;
+   cursor: pointer;
+   transition: 0.3s ease;
+ }
+ .contact-content .right form .button:hover button{
+    background: none;
+    color: crimson;
+ }
+
+ /* footer styling */
+ footer{
+    background: #111;
+    padding: 20px 23px;
+    color: #fff;
+    text-align: center;
+ }
+ footer span a{
+    color: crimson;
+ }
+ footer span a:hover{
+    text-decoration: underline;
+ }
+ 
+
+ /* responsive media query start */
+ 
+ @media (max-width: 1092px){
+    .about-content .left{
+        width: 100%;
+        text-align: center;
+    }
+    .about-content .right{
+        width: 100%;
+        text-align: center;
+        padding: 0 40px;
+    }
+ }
+
+ @media (max-width: 832px){
+    .serv-content{
+        padding: 0 50px;
+    }
+    .serv-content .card{
+        width: 100%;
+        height: auto;
+        background: #222;
+        padding: 20px 25px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        border-radius: 6px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+ }
+
+ @media (max-width: 786px){
+    .navbar{
+        max-width: 100%;
+        font-family: ntu'Ubu', sans-serif;
+ }
+ .sticky{
+    padding: 10px 0;
+ }
+ .navbar .logo{
+    margin-bottom: 15px;
+    position: relative;
+    right: 15px;
+ }
+ .navbar .menu{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    padding-top: 60px;
+    transition: all 0.3s ease;
+ }
+ .navbar .menu.active{
+    left: 0;
+ }
+ .hidden{
+    display: none;
+ }
+ .menu-btn{
+    display: block;
+    z-index: 999;
+ }
+ .navbar .logo a{
+    font-size: 40px;
+    margin-left: 23px;
+ }
+ .navbar .menu li{
+    list-style-type: none;
+    display:block;
+}
+.navbar .menu li a{
+    display: inline-block;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 20px;
+    transition: .4s;
+    margin-left: 0;
+}
+.navbar .menu li a:hover{
+    background: #222;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.navbar .max-width{
+    padding: 0 40px;
+    text-align: center;
+}
+.max-width{
+    max-width: 700px;
+    padding: 1%;
+}
+.about-content, .serv-content, .skills-content, .contact-content{
+    display: block;
+}
+
+/* skills section styling */
+.skills-content .column{
+    width: 100%;
+    padding: 0 7%;
+}
+.skills-content .left{
+    margin-bottom: 20px;
+}
+.skills-content .right{
+    padding: 0 100px;
+}
+
+/* team sectoin styling */
+.teams .carousel{
+    padding: 0 80px;
+}
+
+/* contact section styling */
+.contact .contact-content .column{
+    width: 100%;
+ }
+ .contact-content .left p{
+    margin-bottom: 15px;
+ }
+ .contact-content .left{
+    margin-bottom: 15px;
+    
+ }
+ .contact-content .left .text{
+    text-align: center;
+ }
+ .contact-content .left p{
+    padding: 0 70px;
+ }
+ .contact-content .left .icons{
+    padding: 0 70px;
+ }
+ .contact-content .right{
+    padding: 0 70px;
+ }
+ .contact-content .right .text{
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 15px;
+ }
+ .contact-content .right form .button{
+    margin: 0 auto;
+    margin-top: 50px;
+ }
+ }
