@@ -21,7 +21,7 @@ font-family: 'Ubuntu', sans-serif; */
     transition: all 0.3s ease;
     z-index: 999;
 }
-.sticky{
+.navbar.sticky{
     background-color: crimson;
     padding: 20px 0;
 }
@@ -38,7 +38,7 @@ font-family: 'Ubuntu', sans-serif; */
 .navbar .logo a span{
     color: crimson
 }
-.sticky .logo a span{
+.navbar.sticky .logo a span{
     color: white;
 }
 .navbar .menu li{

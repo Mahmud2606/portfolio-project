@@ -2,20 +2,20 @@ var menu = document.querySelector(".menu");
 var menuItems = menu.querySelectorAll("li a");
 var menuBtn = document.querySelector(".menu-btn");
 var icon = document.querySelector(".menu-btn i");
+var navbar = document.querySelector(".navbar");
 
-window.addEventListener("scroll", function(){
-   
-    if (window.scrollY > 20) {
-      var navbar = document.querySelector(".navbar");
-      navbar.classList.add("sticky")
+window.addEventListener("scroll", () => {
+  if(window.scrollY > 20){
+    navbar.classList.add("sticky");
   }else{
-    navbar.classList.remove("sticky")
-  }
-  if(this.scrollY > 500){
-     $(".scrol-up-button").addClass("show");
+    navbar.classList.remove("sticky");
+  };
+
+  if(window.scrollY > 500){
+    document.querySelector(".scrol-up-button").classList.add("show");
   }else{
-     $(".scrol-up-button").removeClass("show");
-  }
+    document.querySelector(".scrol-up-button").classList.remove("show");
+  };
 });
 
 // typing script
